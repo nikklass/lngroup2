@@ -51,7 +51,7 @@ class LoginProxy
                 ->orWhere('phone', $username)
                 ->first();
 
-        dd($user, $username, $password);
+        //dd($user, $username, $password);
 
         if ($user) {
             
