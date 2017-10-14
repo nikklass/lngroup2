@@ -47,11 +47,11 @@ class LoginProxy
     public function attemptLogin($username, $password)
     {
 
-        $user = $this->model::where('email', $username)
+        $user = $this->model->where('email', $username)
                 ->orWhere('phone', $username)
                 ->first();
 
-        //dd($user, $username, $password);
+        dd($user, $username, $password);
 
         if ($user) {
             
