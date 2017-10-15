@@ -53,7 +53,7 @@ class MessagesController extends Controller
         //are we in report mode?
         $report = $request->report;
 
-        $message = $this->model::all();
+        $message = $this->model->all();
         
         if (!$report) {
             $message = $message->paginate('limit', $request->get('limit', config('app.pagination_limit')));
@@ -114,7 +114,7 @@ class MessagesController extends Controller
     {
         
         //get details for this message
-        $message = $this->model::where('id', $id)
+        $message = $this->model->where('id', $id)
                  ->with('company')
                  ->first();
 

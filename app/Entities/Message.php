@@ -42,7 +42,7 @@ class Message extends Model
 
         $model = static::query()->create($attributes);
 
-        return $model;
+        return $model; 
 
     }
 
