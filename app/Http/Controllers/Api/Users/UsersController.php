@@ -236,6 +236,7 @@ class UsersController extends Controller
 
     }
 
+
     /**
      * @param Request $request
      * @return mixed
@@ -273,6 +274,7 @@ class UsersController extends Controller
         return ['message' => 'User created. Please confirm your account.'];
 
     }
+
 
     /*change password -- cant*/
     public function changePassword(Request $request, $uuid)
@@ -316,6 +318,7 @@ class UsersController extends Controller
 
     }
 
+
     /**
      * @param Request $request
      * @param $uuid
@@ -355,6 +358,7 @@ class UsersController extends Controller
 
     }
 
+
     /**
      * @param Request $request
      * @param $uuid
@@ -387,12 +391,13 @@ class UsersController extends Controller
         }
 
         // Except these as we don't want to let the users change these fields from this endpoint
-        //$user->update($request->only('dob', 'dob_updated'));
-        $user->update($request->except('id'));
+        $user->update($request->only('dob', 'dob_updated'));
+        //$user->update($request->except('id'));
 
         return $this->response->item($user->fresh(), new UserTransformer());
 
     }
+
 
     /**
      * @param Request $request
@@ -429,6 +434,7 @@ class UsersController extends Controller
         return $this->response->item($user->fresh(), new UserTransformer());
 
     }
+
 
     /**
      * @param Request $request
