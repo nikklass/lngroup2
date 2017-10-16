@@ -5,7 +5,7 @@ namespace App\Entities;
 use App\Entities\ChatThread;
 use App\Entities\Status;
 use App\Entities\User;
-use App\Events\ChatMessage;
+use App\Entities\ChatMessage;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
