@@ -250,7 +250,7 @@ class UsersController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6|confirmed',
             'phone_country' => 'required_with:phone',
-            'phone' => 'required|phone:mobile|unique:users',
+            'phone' => 'required|phone|unique:users',
         ];
 
         $payload = app('request')->only('first_name', 'last_name', 'email', 'phone', 'phone_country', 'password', 'password_confirmation');
@@ -444,7 +444,7 @@ class UsersController extends Controller
     public function destroy(Request $request, $uuid)
     {
         $user = $this->model->byUuid($uuid)->firstOrFail();
-        $user->delete();
+        $user->delete(); 
 
         return $this->response->noContent();
     }

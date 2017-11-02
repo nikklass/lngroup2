@@ -193,5 +193,4 @@ class ChatThreadsController extends Controller
         return $this->response->noContent();
     }
 
-
 }
